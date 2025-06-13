@@ -13,7 +13,7 @@ type State = {
   clockName: string;
 };
 
-export class App extends React.Component<State> {
+export class App extends React.Component<{}, State> {
   state: Readonly<State> = {
     hasClock: false,
     clockName: 'Clock-0',
@@ -25,7 +25,7 @@ export class App extends React.Component<State> {
     this.setState({ hasClock: true });
   };
 
-  private handleHide = (event: MouseEvent) => {
+  private handleHide = (event: globalThis.MouseEvent) => {
     event.preventDefault();
     this.setState({ hasClock: false });
   };
